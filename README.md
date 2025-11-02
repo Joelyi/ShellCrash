@@ -30,19 +30,19 @@ opkg update && opkg install curl
 ~**使用curl安装**：<br>
 
 ```Shell
-#Release版本-github直连
-sh -c "$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/Joelyi/ShellClash/master/install.sh)" && source /etc/profile &> /dev/null
-#Release版本-jsdelivrCDN源
-sh -c "$(curl -kfsSl https://cdn.jsdelivr.net/gh/Joelyi/ShellClash@master/install.sh)" && source /etc/profile &> /dev/null
-#Test版本-github直连
-sh -c "$(curl -kfsSl --resolve raw.githubusercontent.com:443:199.232.68.133 https://raw.githubusercontent.com/Joelyi/ShellClash/master/install.sh)" -s 1 && source /etc/profile &> /dev/null
+#by github-CDN
+export url='https://raw.githubusercontent.com/Joelyi/ShellClash/master' && sh -c "$(curl -kfsSl $url/install.sh)" && source /etc/profile &> /dev/null
+#by jsdelivrCDN
+export url='https://cdn.jsdelivr.net/gh/Joelyi/ShellClash@master' && sh -c "$(curl -kfsSl $url/install.sh)" && source /etc/profile &> /dev/null
+#by myserver
+export url='http://shellclash.ga/' && sh -c "$(curl -kfsSl $url/install.sh)" && source /etc/profile &> /dev/null
 ```
 
 ~**使用wget安装**：<br>
 
 ```sh
-#Release版本-jsdelivrCDN源
-wget -q --no-check-certificate -O /tmp/install.sh https://cdn.jsdelivr.net/gh/Joelyi/ShellClash@master/install.sh  && sh /tmp/install.sh && source /etc/profile &> /dev/null
+#By jsdelivrCDN
+export url='https://cdn.jsdelivr.net/gh/Joelyi/ShellClash@master' && wget -q --no-check-certificate -O /tmp/install.sh $url/install.sh  && sh /tmp/install.sh && source /etc/profile &> /dev/null
 ```
 
 ~**非root用户安装后**请额外执行以下命令以读取环境变量：<br>
