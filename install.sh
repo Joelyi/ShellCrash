@@ -34,9 +34,9 @@ webget(){
 	fi
 }
 #检查更新
-url="https://cdn.jsdelivr.net/gh/Joelyi/ShellClash"
+url="https://fastly.jsdelivr.net/gh/Joelyi/ShellCrash@master"
 if [ "$test" -gt 0 ];then 
-	url="https://cdn.jsdelivr.net/gh/Joelyi/ShellClash@master"
+	url="https://fastly.jsdelivr.net/gh/Joelyi/ShellCrash@master"
 	[ "$test" -eq 2 ] && url="http://192.168.31.31:8080/ShellClash"
 	[ "$test" -eq 3 ] && url="http://192.168.123.90:8080/clash-for-Miwifi"
 else
